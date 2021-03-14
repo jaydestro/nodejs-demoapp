@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "funbytes119-9c96"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "funbytes119-9c96"
+  template:
+    metadata:
+      labels:
+        app: "funbytes119-9c96"
+    spec:
+      containers:
+        - name: "funbytes119-9c96"
+          image: "funbytes119acr.azurecr.io/funbytes119"
+          ports:
+          - containerPort: 3000
