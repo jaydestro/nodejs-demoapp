@@ -1,17 +1,12 @@
-apiVersion: extensions/v1beta1
-kind: Ingress
+apiVersion: v1
+kind: Service
 metadata:
-    name: "jakube-3b76"
-    labels:
-        app: "jakube-3b76"
-    annotations:
-        kubernetes.io/ingress.class: addon-http-application-routing
+  name: jakube-3b76
 spec:
-    rules:
-        - host: jakubeb953-jakube-3b76.c8b6bfbe7b4c4737b1b6.eastus.aksapp.io
-          http:
-            paths:
-            - path: /
-              backend:
-                serviceName: "jakube-3b76"
-                servicePort: 3000
+  type: LoadBalancer
+  selector:
+    app: jakube-3b76
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 3000
