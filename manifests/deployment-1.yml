@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "jakube-3b76"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "jakube-3b76"
+  template:
+    metadata:
+      labels:
+        app: "jakube-3b76"
+    spec:
+      containers:
+        - name: "jakube-3b76"
+          image: "jakubeb953.azurecr.io/jakube"
+          ports:
+          - containerPort: 3000
