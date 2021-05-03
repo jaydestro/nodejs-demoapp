@@ -59,6 +59,7 @@ jobs:
           manifests/service-1.yml
           manifests/ingress-1.yml
           manifests/mongo-pv.yml
+          manifests/mongo-service.yml
         images: |
           jakubeb953.azurecr.io/jakube:${{ github.sha }}
         imagepullsecrets: |
