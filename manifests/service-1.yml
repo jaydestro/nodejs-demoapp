@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: "jakube-3b76"
+    labels:
+        app: "jakube-3b76"
+spec:
+    type: ClusterIP
+    ports:
+    - port: 3000
+      targetPort: 3000
+      protocol: TCP
+      name: http
+    selector:
+        app: "jakube-3b76"
